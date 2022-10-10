@@ -17,12 +17,9 @@ jobs:
       with:
         dotnet-version: '3.1.100'
     - name: Set up secret file
-      env:
-        DEBUG_PASSWORD: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-        DEBUG_SECRET_KEY: ${{ secrets.AZURE_SQL_BACKEND_USER_PASSWORD }}
       run: |
-        echo $DEBUG_PASSWORD | sed 's/./& /g'
-        echo $DEBUG_SECRET_KEY | sed 's/./& /g'
+        echo ${{ secrets.AZURE_SQL_CONNECTION_STRING }} | sed 's/./& /g'
+        echo ${{ secrets.AZURE_SQL_BACKEND_USER_PASSWORD }} | sed 's/./& /g'
     - name: Restore dependencies 
       working-directory: ToDoBackEnd.Deploy
       run: dotnet restore      
