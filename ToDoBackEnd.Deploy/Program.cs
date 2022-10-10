@@ -14,8 +14,8 @@ namespace ToDoBackEnd.Deploy
             var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
             var backEndUserPassword = Environment.GetEnvironmentVariable("BackEndUserPassword");
             
-            Console.WriteLine(connectionString)
-            Console.WriteLine(BackEndUserPassword)
+            Console.WriteLine(connectionString);
+            Console.WriteLine(backEndUserPassword);
 
             var branchName = Environment.GetEnvironmentVariable("GITHUB_REF");
             branchName = branchName.Replace("refs/heads/", string.Empty);
